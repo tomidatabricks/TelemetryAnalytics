@@ -1,13 +1,17 @@
 # Databricks notebook source
 # MAGIC %md #Overview
 # MAGIC
-# MAGIC The notebooks and code contained here, runs on Databricks DBR 14.x
+# MAGIC The notebooks and code contained here, runs on Databricks DBR 14.x in Unity Catalog enabled notebook
+# MAGIC
+# MAGIC TODO DESCRIBE THE ARCH DIAGRAM AND THE SOLUTION
+# MAGIC
+# MAGIC Disclaimer: Use at your own risk for whatever you want, no warranty whatsover (TODO replace with Layerblurb)
 # MAGIC
 # MAGIC https://github.com/tomidatabricks/TelemetryAnalytics
 # MAGIC
 # MAGIC
 # MAGIC
-# MAGIC ![Architecture Diagram](files/tomi_schumacher/ControllerTelemetrics/Architecture_Overview.png)
+# MAGIC ![Architecture Diagram](https://github.com/tomidatabricks/TelemetryAnalytics/blob/183a6d9b257378c834c5e6735b2d876fc77e6c1e/images/TelemetryAnalyticsOverview.png?raw=true)
 # MAGIC
 # MAGIC
 # MAGIC
