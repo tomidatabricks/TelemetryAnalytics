@@ -5,7 +5,7 @@
 
 # COMMAND ----------
 
-# MAGIC %md ##Create catalog, schema and volume
+# MAGIC %md ##Create catalog and schema
 # MAGIC  
 
 # COMMAND ----------
@@ -16,6 +16,15 @@
 # MAGIC
 # MAGIC CREATE DATABASE IF NOT EXISTS telemetry_analytics_cat.main;
 # MAGIC
+# MAGIC
+
+# COMMAND ----------
+
+# MAGIC %md ##Droping and creating a volume on cloud storage
+
+# COMMAND ----------
+
+# MAGIC %sql 
 # MAGIC DROP VOLUME IF EXISTS telemetry_analytics_cat.main.landing;
 # MAGIC
 # MAGIC CREATE VOLUME telemetry_analytics_cat.main.landing;

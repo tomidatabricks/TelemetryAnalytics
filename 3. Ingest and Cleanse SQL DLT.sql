@@ -1,5 +1,7 @@
 -- Databricks notebook source
 -- MAGIC %md #Ingest and Cleanse SQL DLT
+-- MAGIC
+-- MAGIC TODO: add data quality constraints
 
 -- COMMAND ----------
 

@@ -38,7 +38,7 @@
 
 # COMMAND ----------
 
-DO_TEST = False
+DO_TEST = True
 
 # COMMAND ----------
 
@@ -92,10 +92,6 @@ def add_d_col_fixed_dt(df, new_col_name, col, time_col, part_col, dt=1000.0/60.0
 
 # COMMAND ----------
 
-  
-
-# COMMAND ----------
-
 if (DO_TEST):
   df = (spark.range(120)
         .withColumn("group_id",sf.floor(sf.col("id")/60))
@@ -127,7 +123,7 @@ if (DO_TEST):
 
 def calc_vel_accl_jerk_features(feature_df):
 
-  #TODO: can probably use funtools to currie the below?  
+  #TODO: rewrite to us funtools.partial 
   def add_derived_helper(feature_df ,new_col_name , col):
     return add_d_col_fixed_dt(feature_df, new_col_name, col, sf.col("unix_timestamp"), sf.col("group_name"))
 
@@ -212,8 +208,7 @@ if (DO_TEST):
 
     from pyspark.sql.functions import when
 
-    # Join labels_df and features_df on the "group_name" column
-    joined_df = labels_df.join(features_df, "group_name")
+    joined_df = labels_df.join(feature_df, "group_name")
 
     # Add new column "label_new" based on the condition of left_y_accel_stddev
     joined_df = (joined_df
@@ -238,6 +233,8 @@ if (DO_TEST):
 
 # COMMAND ----------
 
+
+#TODO use a merge for that, do we still use the feature store API for that or DLT merge
 (feature_df.write
     .format("delta")
     .mode("overwrite")
