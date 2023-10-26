@@ -14,7 +14,3 @@ UNION ALL SELECT "clean_telemetry" AS name, count(1), max(created_at) AS t FROM 
 UNION ALL SELECT "clean_telemetry_features" AS name, count(1), max(created_at) AS t FROM telemetry_features
 UNION ALL SELECT "telemetry_labels_and_features" AS name, count(1), max(created_at) AS t FROM telemetry_labels_and_features
 ORDER BY t ASC
-
--- COMMAND ----------
-
-df
