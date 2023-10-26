@@ -7,10 +7,14 @@
 # COMMAND ----------
 
 import pyspark.sql.functions as sf
-from pyspark.ml.classification import LogisticRegression
 import mlflow
 
 mlflow.set_registry_uri("databricks-uc") #use unity catalog as the registery
+
+# COMMAND ----------
+
+features_df = spark.table("telemetry_analytics_cat.main.telemetry_features")
+
 
 # COMMAND ----------
 

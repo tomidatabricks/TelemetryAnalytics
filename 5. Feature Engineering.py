@@ -182,7 +182,7 @@ labels_df = (spark.read.format("csv").option("header", True)
       .withColumn("input_file_name", sf.col("_metadata.file_path"))
       .withColumn("label", sf.reverse(sf.split(sf.col("_metadata.file_path"),"[_.]")).getItem(2))
       .withColumn("group_name", sf.reverse(sf.split(sf.col("_metadata.file_path"),"[/_]")).getItem(1))
-      .select("group_name","label").distinct()
+      .select("group_name", "label", sf.now().alias("created_at")).distinct()
 )
 
 (labels_df.write
@@ -235,7 +235,7 @@ if (DO_TEST):
 
 
 #TODO use a merge for that, do we still use the feature store API for that or DLT merge
-(feature_df.write
+(feature_df.withColumn("created_at", sf.now()).write
     .format("delta")
     .mode("overwrite")
     .saveAsTable("telemetry_analytics_cat.main.telemetry_features")

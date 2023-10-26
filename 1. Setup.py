@@ -11,12 +11,9 @@
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC
 # MAGIC CREATE CATALOG IF NOT EXISTS  telemetry_analytics_cat;
 # MAGIC
 # MAGIC CREATE DATABASE IF NOT EXISTS telemetry_analytics_cat.main;
-# MAGIC
-# MAGIC
 
 # COMMAND ----------
 
@@ -37,7 +34,3 @@
 # COMMAND ----------
 
 dbutils.fs.ls("/Volumes/telemetry_analytics_cat/main/landing/")
-
-# COMMAND ----------
-
-

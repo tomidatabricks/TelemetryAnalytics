@@ -1,12 +1,21 @@
 # Databricks notebook source
 # MAGIC %md #Overview
 # MAGIC
-# MAGIC The notebooks and code contained here, runs on Databricks DBR >=14.x on a Unity Catalog enabled workspace
+# MAGIC This set of notebooks shows a telemetry ETL pipeline, feature engineering. model training and batch scooring of the model.
+# MAGIC
+# MAGIC This notebook show cases the following Databricks features:
+# MAGIC - Untiy Catalog
+# MAGIC - Delta Live Tables
+# MAGIC - Feature Tables
+# MAGIC - Auto ML
+# MAGIC
+# MAGIC Everything is kept simple, so that it is easy to understand, but complex enough, to show the features of the Databricks.
+# MAGIC
+# MAGIC The notebooks and code contained here, runs on Databricks DBR >=14.x on a Unity Catalog enabled workspace.
 # MAGIC
 # MAGIC Use a Databricks repo and check out the code from https://github.com/tomidatabricks/TelemetryAnalytics 
 # MAGIC
-# MAGIC Disclaimer: Use at your own risk for whatever you want, no warranty whatsever (TODO replace with lawyer blurb)
-# MAGIC
+# MAGIC The notebooks and code is on "AS IS" basis, without warranties or conditions of any kind.
 # MAGIC
 # MAGIC
 

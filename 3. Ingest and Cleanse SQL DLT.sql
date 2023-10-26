@@ -34,7 +34,8 @@ SELECT
   CAST(left_x AS DOUBLE) AS left_x,
   CAST(left_y AS DOUBLE) AS left_y,
   CAST(right_x AS DOUBLE) AS right_x,
-  CAST(right_y AS DOUBLE) AS right_y
+  CAST(right_y AS DOUBLE) AS right_y,
+  NOW() AS created_at
 FROM
   LIVE.raw_telemetry;
 
@@ -54,6 +55,7 @@ SELECT
   ,max_unix_timestamp - min_unix_timestamp AS duration_millis
   ,IF(duration_millis > 0, COUNT(1)/duration_millis, 999999.9 ) as sampling_rate
   ,SLICE(COLLECT_LIST(left_x),1,10) AS sampling
+  ,NOW() AS created_at
  FROM
   LIVE.clean_telemetry
 GROUP BY
