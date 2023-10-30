@@ -53,13 +53,11 @@
 
 # COMMAND ----------
 
+from databricks import automl
 
-import databricks
-
-summary = databricks.automl.classify(
+summary = automl.classify(
   dataset= "telemetry_analytics_cat.main.telemetry_labels_and_features"
   ,target_col="label"
-  ,max_trials=5
   ,timeout_minutes=7
 )
 

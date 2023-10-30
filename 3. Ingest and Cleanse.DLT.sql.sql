@@ -1,5 +1,5 @@
 -- Databricks notebook source
--- MAGIC %md #Ingest and Cleanse SQL DLT
+-- MAGIC %md #Ingest and Cleanse DLT.sql
 -- MAGIC
 -- MAGIC TODO: add data quality constraints
 
@@ -46,7 +46,7 @@ FROM
 -- COMMAND ----------
 
 CREATE
-  OR REPLACE LIVE TABLE stats AS
+  OR REPLACE LIVE TABLE telemetry_stats AS
 SELECT
   group_name
   ,count(1) AS num_events
@@ -54,7 +54,7 @@ SELECT
   ,max(unix_timestamp) AS max_unix_timestamp
   ,max_unix_timestamp - min_unix_timestamp AS duration_millis
   ,IF(duration_millis > 0, COUNT(1)/duration_millis, 999999.9 ) as sampling_rate
-  ,SLICE(COLLECT_LIST(left_x),1,10) AS sampling
+  ,SLICE(COLLECT_LIST(left_x),1,10) AS sampling_left_x_list
   ,NOW() AS created_at
  FROM
   LIVE.clean_telemetry
