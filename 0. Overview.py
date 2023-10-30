@@ -29,7 +29,7 @@
 # MAGIC - data is ingested into the bronze layer, then cleansed into the siver layer, then enhanced and summarized for consumption in a gold layer
 # MAGIC - feature engineering is performed on the sliver layer, and the features are used to train a model, the model scores are then added to the gold layer to be consumed by the end user or an operational system
 # MAGIC
-# MAGIC ![Architecture Diagram](https://github.com/tomidatabricks/TelemetryAnalytics/blob/183a6d9b257378c834c5e6735b2d876fc77e6c1e/images/TelemetryAnalyticsOverview.png?raw=true)
+# MAGIC ![Architecture Diagram](https://raw.githubusercontent.com/tomidatabricks/TelemetryAnalytics/main/images/TelemetryAnalyticsOverview.png)
 # MAGIC
 
 # COMMAND ----------
