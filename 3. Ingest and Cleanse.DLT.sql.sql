@@ -37,7 +37,7 @@ SELECT
   CAST(right_y AS DOUBLE) AS right_y,
   NOW() AS created_at
 FROM
-  LIVE.raw_telemetry;
+  STREAM(LIVE.raw_telemetry);
 
 -- COMMAND ----------
 
